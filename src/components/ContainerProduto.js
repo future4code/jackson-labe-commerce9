@@ -9,7 +9,7 @@ class ContainerProduto extends React.Component {
                 <img src={this.props.imageUrl} alt={"imagem do produto"} />
                 <p>{this.props.name}</p>
                 <p>{this.props.value}</p>
-                <button>Adicionar ao Carrinho</button>
+                <button onClick={this.adicionarCarrinho}>Adicionar ao Carrinho</button>
             </div>
         );
     }
