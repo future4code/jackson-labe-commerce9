@@ -6,7 +6,7 @@ const InputFiltro = styled.div`
 `;
 
 const ContainerFiltro = styled.div`
-  border: solid 2px green;
+  border: solid 2px black;
   width: ${(props) => props.width};
   height: 100%;
 

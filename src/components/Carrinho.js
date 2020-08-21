@@ -1,53 +1,46 @@
-import React from "react";
-import styled from "styled-components";
-import ContainerProduto from './ContainerProduto'
-import App.js
+// import React from "react";
+// import styled from "styled-components";
 
-const ContainerCarrinho = styled.div`
-  border: solid 2px black;
-  width: 18%;
-  height: 100%;
 
-  padding: 5px;
-`;
 
-export default class Carrinho extends React.Component {
+// const ContainerCarrinho = styled.div`
+//   border: solid 2px black;
+//   width: 18%;
+//   height: 100%;
+
+//   padding: 5px;
+// `;
+
+// class Carrinho extends React.Component {
   
-  adicionarCarrinho = () => { 
-  
-  state = {
+// //   //const arrayCarrinho = this.props.listaDeProdutos;
 
-    arrayCarrinho: [
-      {
-        NomeProduto: "",
-        valorProduto: "",
-      }],
+  
+// //   adicionarCarrinho = (id) => { 
+
+// //       const arrayCarrinho = this.props.listaDeProdutos;
     
-    //nomeInputProduto: "",
-    //valorInputProduto: ""
-  };
+// //       const novoCarrinho = this.state.listaDeProdutos.filter((produto) => {
+// //         if (id === produto.id) {
+// //           arrayCarrinho.push(produto);
 
-  adicionaProduto = () => { 
+// //         }
+// //       });
   
-     const novoProduto = {
-       
-       Nome: this.state.NomeProduto,
-       Valor: this.state.valorProduto
-     };
 
-   
-     const novosProdutos = [...this.state.arrayCarrinho, novoProduto];
-     this.setState({ arrayCarrinho: novosProdutos})
-    }
-  }
+  
+// //      const novosProdutos = [...this.state.arrayCarrinho, novosProdutos];
+// //      this.setState({ arrayDoCarrinho: novosProdutos})
+    
+// //   }
 
-  render() {
-    return (
-      <ContainerCarrinho>
-        <h2>Carrinho:</h2>
-        <span>Total:</span>
-        <span>{}</span>
-      </ContainerCarrinho>
-    );
-  }
-  }
+//   render() {
+//     return (
+//       <ContainerCarrinho>
+//         <h2>Carrinho:</h2>
+//         <span>Total:</span>
+//         <span>{}</span>
+//       </ContainerCarrinho>
+//     );
+//   }
+//   } export default Carrinho
