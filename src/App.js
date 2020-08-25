@@ -39,141 +39,7 @@ const ListaProdutos = styled.div`
   width: 100%;
   height: 95%;
 `
-const ContainerCarrinho = styled.div`
-  border: solid 2px black;
-  width: 18%;
-  height: 100%;
 
-  padding: 5px;
-`;
-
-const Produto = styled.div`
-
-
-  border: dashed 1px orange;
-  padding: 5px;
-
-  display:flex;
-  flex-direction: column;
-  justify-content:space-around;
-`;
-
-const ImagemProduto = styled.img`
-  width: 100%;
-  height: 60%;
-`;
-
-const Texto = styled.p`
-  height: 15px;
-`;
-
-const BotaoAdd = styled.button`
-  width: 100%;
-  height: 5vh;
-  background-color: black;
-  color: white;
-  border: none;
-  outline: none;
-`;
-
-const InputFiltro = styled.div`
-  margin-bottom: 20px;
-`;
-
-const ContainerFiltro = styled.div`
-  border: solid 2px black;
-  width: ${(props) => props.width};
-  height: 100%;
-
-  padding: 5px;
-`;
-
-const ContainerBotaoCarrinho = styled.button`
-  background-color: white;
-  border: solid 2px white;
-  border-radius: 50%;
-  outline: none;
-
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-
-  width: 80px;
-  height: 80px;
-  padding: 10px;
-`;
-
-const Icone = styled.img`
-  width: 80%;
-  height: 80%;
-
-  opacity: 80%;
-`;
-
-class ContainerProduto extends React.Component {
-  render() {
-      return (
-          <Produto>
-              <ImagemProduto src={this.props.imageUrl} alt={"imagem do produto"} />
-              <Texto>{this.props.name}</Texto>
-              <Texto>{this.props.value}</Texto>
-              <button onClick={()=>this.props.funcaoAdd(this.props.id)}>Adicionar ao Carrinho</button>
-          </Produto>
-      );
-  }
-}
-
-class Carrinho extends React.Component {
-  
-  render() {
-    return (
-      <ContainerCarrinho>
-        <h2>Carrinho:</h2>
-        <p>{this.props.name}</p>
-        <span>Total:</span>
-
-        <span>{}</span>
-      </ContainerCarrinho>
-    );
-  }
-  }
-
-class Filtro extends React.Component {
-
-  
-  render() {
-    return (
-      <ContainerFiltro width={this.props.widthFiltro}>
-        <h2>Filtros:</h2>
-        <InputFiltro>
-          <label>Valor Mínimo:</label>
-          <input type="number" />
-        </InputFiltro>
-        <InputFiltro>
-          <label>Valor Máximo:</label>
-          <input type="number" />
-        </InputFiltro>
-        <InputFiltro>
-          <label>Buscar Produto</label>
-          <input type="text" />
-        </InputFiltro>
-      </ContainerFiltro>
-    );
-  }
-}
-
-class BotaoCarrinho extends React.Component {
-  render() {
-    return (
-      <ContainerBotaoCarrinho onClick={this.props.onClickIcone}>
-        <Icone
-          src={"https://image.flaticon.com/icons/svg/126/126510.svg"}
-          alt={"Icone carrinho"}
-        />
-      </ContainerBotaoCarrinho>
-    );
-  }
-}
 
 export default class App extends React.Component {
   state = {
@@ -322,13 +188,9 @@ export default class App extends React.Component {
             </Header>
             <ListaProdutos>{produtos}</ListaProdutos>
           </SecaoProdutos>
-  
-           
-        
-          <Carrinho/>
-            
-          
-          
+
+          <Carrinho />
+
           <BotaoCarrinho onClickIcone={this.onClickBotaoCarrinho} />
         </ContainerLoja>
       );
