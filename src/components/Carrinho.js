@@ -1,24 +1,46 @@
-import React from "react";
-import styled from "styled-components";
+// import React from "react";
+// import styled from "styled-components";
 
-const ContainerCarrinho = styled.div`
-  border: solid 2px green;
-  width: 18%;
-  height: 100%;
 
-  padding: 5px;
-`;
 
-class Carrinho extends React.Component {
-  render() {
-    return (
-      <ContainerCarrinho>
-        <h2>Carrinho:</h2>
-        <span>Total:</span>
-        <span>{}</span> /* deixei esse span como espera para entrar o valor total da compra */
-      </ContainerCarrinho>
-    );
-  }
-}
+// const ContainerCarrinho = styled.div`
+//   border: solid 2px black;
+//   width: 18%;
+//   height: 100%;
 
-export default Carrinho;
+//   padding: 5px;
+// `;
+
+// class Carrinho extends React.Component {
+  
+// //   //const arrayCarrinho = this.props.listaDeProdutos;
+
+  
+// //   adicionarCarrinho = (id) => { 
+
+// //       const arrayCarrinho = this.props.listaDeProdutos;
+    
+// //       const novoCarrinho = this.state.listaDeProdutos.filter((produto) => {
+// //         if (id === produto.id) {
+// //           arrayCarrinho.push(produto);
+
+// //         }
+// //       });
+  
+
+  
+// //      const novosProdutos = [...this.state.arrayCarrinho, novosProdutos];
+// //      this.setState({ arrayDoCarrinho: novosProdutos})
+    
+// //   }
+
+//   render() {
+//     return (
+//       <ContainerCarrinho>
+//         <h2>Carrinho:</h2>
+//         <span>Total:</span>
+//         <span>{}</span>
+//       </ContainerCarrinho>
+//     );
+//   }
+//   } export default Carrinho

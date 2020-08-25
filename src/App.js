@@ -1,10 +1,7 @@
 import React from 'react';
 import './App.css';
 import styled from "styled-components";
-import ContainerProduto from './components/ContainerProduto';
-import Carrinho from './components/Carrinho';
-import BotaoCarrinho from './components/BotaoCarrinho';
-import Filtro from './components/Filtro';
+
 
 const ContainerLoja = styled.div`
   width: 98vw;
@@ -43,8 +40,12 @@ const ListaProdutos = styled.div`
   height: 95%;
 `
 
+
 export default class App extends React.Component {
   state = {
+
+    carrinho: [],
+
     listaDeProdutos: [
       {
         id: 1,
@@ -107,15 +108,43 @@ export default class App extends React.Component {
   };
 
 
+  
+  adicionarCarrinho = (id) => { 
+      console.log('oi')
+      const novoCarrinho = this.state.carrinho;
+
+      const novoArrayCarrinho = this.state.listaDeProdutos.filter((produto) => {
+        if (id === produto.id) {
+          return produto;
+          
+
+        }
+      });
+  
+
+  
+     const novosProdutos = [...this.state.carrinho, novoArrayCarrinho[0]]
+     console.log(novosProdutos)
+     this.setState({ carrinho: novosProdutos})
+     
+     
+  };
+  
   render(){
   
     const produtos = this.state.listaDeProdutos.map((produtos) => {
+      
       return (
         <ContainerProduto
-          name={produtos.name}
+        name={produtos.name}
           value={produtos.value}
           imageUrl={produtos.imageUrl}
-        />
+          id={produtos.id}
+          funcaoAdd={this.adicionarCarrinho}
+          />
+          
+        
+        
       )
     })
 
@@ -159,7 +188,9 @@ export default class App extends React.Component {
             </Header>
             <ListaProdutos>{produtos}</ListaProdutos>
           </SecaoProdutos>
+
           <Carrinho />
+
           <BotaoCarrinho onClickIcone={this.onClickBotaoCarrinho} />
         </ContainerLoja>
       );

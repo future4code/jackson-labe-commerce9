@@ -14,6 +14,8 @@ const ContainerFiltro = styled.div`
 `;
 
 class Filtro extends React.Component {
+
+  
   render() {
     return (
       <ContainerFiltro width={this.props.widthFiltro}>
@@ -34,5 +36,6 @@ class Filtro extends React.Component {
     );
   }
 }
+
 
 export default Filtro;
